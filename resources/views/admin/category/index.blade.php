@@ -41,7 +41,9 @@
                                     <td><img src="{{asset('uploads/category/'.$category->image )}}" alt="" height="32"></td>
                                     <td>{{ $category->created_at->format('d/m/Y') }}</td>
                                     <td>
-                                        <a href="{{url('admin/category/delete/'.$category->id )}}"onclick="confirm('Are you sure want to delete this category'?)" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                                    <a href="{{url('admin/category/delete/'.$category->id )}}"onclick="return confirm('Are you sure want to delete this category?')" 
+                                        class="btn btn-danger"><i class="fas fa-trash"></i>
+                                    </a>
                                         <a href="{{url('admin/category/edit/'.$category->id)}}" class="btn btn-info"><i class="fas fa-pen"></i></a>
                                     </td>
                                 </tr>
