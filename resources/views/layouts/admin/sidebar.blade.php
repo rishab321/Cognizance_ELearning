@@ -18,6 +18,12 @@
             <span>Dashboard</span></a>
     </li>
 
+    <li class="nav-item active">
+        <a class="nav-link" href="{{url('/admin/trash')}}">
+            <i class="fas fa-trash"></i>
+            <span>Trash</span></a>
+    </li>
+
     <!-- Divider -->
     <hr class="sidebar-divider">
 

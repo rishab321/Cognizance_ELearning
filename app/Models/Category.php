@@ -22,7 +22,5 @@ class Category extends Model
         'meta_title',
         'meta_description',
         'deleted_at',
-
-
     ];
 }

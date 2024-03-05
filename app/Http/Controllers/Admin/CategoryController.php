@@ -72,17 +72,46 @@ class CategoryController extends Controller
         }
 
     }
+    public function trash(){
+        $categories=Category::onlyTrashed()->get();
+        return view('admin.trash', compact('categories'));
+    }
 
     public function destroy($id){
         $category=Category::find($id);
         if($category){
             $destination='uploads/category/'.$category->image;
+                $category->delete();
+                return redirect()->back()->with('success','Category moved to trash!');        
+                }
+                else{
+            return redirect()->back()->with('error','Category not found!');
+        }
+
+    }
+   
+    public function delete($id){
+        $category= Category::onlyTrashed()->where('id',$id)->first();
+        if($category){
+            $destination='uploads/category/'.$category->image;
             if(File::exists($destination)){
                 File::delete($destination);
-                }       
+                }    
 
-                $category->delete();
-                return redirect()->back()->with('success','Category deleted successfully!');        
+                $category->forceDelete();
+                return redirect()->back()->with('success','Category deleted permanently!');        
+                }
+                else{
+            return redirect()->back()->with('error','Category not found!');
+        }
+
+    }
+
+    public function restore($id){
+        $category= Category::withTrashed()->where('id',$id)->first();
+        if($category){  
+                $category->restore();
+                return redirect()->back()->with('success','Category restored successfully!');        
                 }
                 else{
             return redirect()->back()->with('error','Category not found!');
