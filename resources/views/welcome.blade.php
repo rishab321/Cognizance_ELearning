@@ -28,7 +28,7 @@
                                         <div class="card-body">
                                             <h5 class="card-title">{{ $fcat->category->title }}</h5>
                                             <p class="card-text"></p>
-                                            <a href="{{ url('login') }}" class="btn btn-primary">Buy Now</a>
+                                            <a href="{{ url('/category/'.$fcat->category->slug) }}" class="btn btn-primary">Buy Now</a>
                                         </div>
                                     </div>
                                 </div>
