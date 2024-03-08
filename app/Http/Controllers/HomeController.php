@@ -31,5 +31,10 @@ class HomeController extends Controller
         return view('admin/category/profile');
     }
 
+    public function userDasboard()
+    {
+        return view('user');
+    }
+
 
 }
