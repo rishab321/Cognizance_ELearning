@@ -41,7 +41,6 @@ class FeaturedController extends Controller
     }
 }
 
-
         public function view_featured_courses(){
 
             return view ('admin.featured.course');
