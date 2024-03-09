@@ -3,6 +3,10 @@
 @section('title', $category->title . ' - ELearning')
 
 @section('content')
+{{-- @php
+    dd($category);
+    die;
+@endphp  --}}
     <section class="section-padding section-bg">
         <div class="container">
             <div class="row my-5">

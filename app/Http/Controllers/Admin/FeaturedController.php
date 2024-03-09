@@ -42,7 +42,7 @@ class FeaturedController extends Controller
 }
 
         public function view_featured_courses(){
-
+            $featured_categories = FeaturedCategory::all();
             return view ('admin.featured.course');
             }
 }

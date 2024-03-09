@@ -20,7 +20,7 @@ return new class extends Migration
              $table->string('slug');
              $table->string('video')->nullable();
              $table->string('meta_title')->nullable();
-             $table->string('image')->nullable();
+             $table->string('image');
              $table->string('meta_description')->nullable();
              $table->string('price')->default('0');   
 

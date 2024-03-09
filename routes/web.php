@@ -22,24 +22,24 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/home', function () {
-    return view('home');
+    return view('home.home');
 });
 
 Route::get('/about', function () {
-    return view('about');
+    return view('home.about');
 });
 
 Route::get('/services', function () {
-    return view('services');
+    return view('home.services');
 });
 Route::get('/portfolio', function () {
-    return view('portfolio');
+    return view('home.portfolio');
 });
 Route::get('/team', function () {
-    return view('team');
+    return view('home.team');
 });
 Route::get('/user', function () {
-    return view('user');
+    return view('home.user');
 });
 
 Route::get('/category/{slug}', [App\Http\Controllers\Client\CategoryController::class,'index']);

@@ -30,7 +30,7 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <form action="{{ url('admin/courses/create') }}" method="POST" class="card shadow rounded p-3"
+                <form action="{{ url('admin/course/create') }}" method="post" class="card shadow rounded p-3"
                     enctype="multipart/form-data">
                     @csrf
                     <div class="md-3">
@@ -39,19 +39,31 @@
                             @foreach ($categories as $category)
                             <option value="{{$category->id}}">{{$category->title}}</option>
                             @endforeach
+                            @error('category_id')
+                            <small class="text-danger text-sm">{{$message}}</small>                            
+                        @enderror  
                         </select>
                     </div>
                     <div class="md-3">
                         <label for="">Courses Title</label>
                         <input class="form-control" type="text" name="title">
+                        @error('title')
+                            <small class="text-danger text-sm">{{$message}}</small>                            
+                        @enderror    
                     </div>
                     <div class="md-3">
                         <label for="">Short Description</label>
                         <input class="form-control" type="text" name="description">
+                        @error('description')
+                        <small class="text-danger text-sm">{{$message}}</small>                            
+                    @enderror
                     </div>
                     <div class="md-3">
                         <label for="">Long Description</label>
                         <textarea id="summernote" name="long_description"></textarea>
+                        @error('long_description')
+                        <small class="text-danger text-sm">{{$message}}</small>                            
+                    @enderror
                     </div>
                     <div class="md-3">
                         <label for="">Video Url</label>
@@ -60,18 +72,37 @@
                     <div class="md-3">
                         <label for="">Slug</label>
                         <input class="form-control" type="text" name="slug">
+                        @error('slug')
+                        <small class="text-danger text-sm">{{$message}}</small>                            
+                    @enderror
                     </div>
                     <div class="md-3">
                         <label for="">Courses Thumbnail</label>
                         <input class="form-control" type="file" name="image">
+                        @error('image')
+                        <small class="text-danger text-sm">{{$message}}</small>                            
+                    @enderror
                     </div>
                     <div class="md-3">
                         <label for="">Meta Courses Title</label>
                         <input class="form-control" type="text" name="meta_title">
+                        @error('meta_title')
+                        <small class="text-danger text-sm">{{$message}}</small>                            
+                    @enderror
                     </div>
                     <div class="md-3">
                         <label for="">Meta Courses Description</label>
                         <input class="form-control" type="text" name="meta_description">
+                        @error('meta_description')
+                        <small class="text-danger text-sm">{{$message}}</small>                            
+                    @enderror
+                    </div>
+                    <div class="md-3">
+                        <label for="">Price</label>
+                        <input class="form-control" type="number" name="price">
+                        @error('price')
+                        <small class="text-danger text-sm">{{$message}}</small>                            
+                    @enderror
                     </div>
                     <div class="md-3">
                         <button class="btn btn-primary" type="submit">Create</button>
