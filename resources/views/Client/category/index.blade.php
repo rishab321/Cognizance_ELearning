@@ -1,16 +1,12 @@
 @extends('layouts.client.master')
 
-@section('title', $category->title . ' - ELearning')
+@section('title', $category->title . ' - ELearning')   
+{{-- <h1>Category page</h1> --}}
 
-@section('content')
-{{-- @php
-    dd($category);
-    die;
-@endphp  --}}
-    <section class="section-padding section-bg">
-        <div class="container">
-            <div class="row my-5">
-                <div class="col-md-12">
+@section('content') 
+    <div  class="container">
+        <div style="margin-top: 80px" class="row">
+            <div class="form-group col-md-12">
                     <form action="{{ url('/search') }}" method="post"
                         class="d-flex align-items-center bg-white rounded p-2 shadow-sm">
                         @csrf
@@ -22,25 +18,30 @@
                         <button class="btn btn-primary">Search</button>
                     </form>
                 </div>
-            </div>
-            <div class="row">
-                @foreach ($courses as $course)
+                {{-- <div class="col-md-12"> --}}
+                @foreach ($courses as $fcat)
                     <div class="col-lg-4 col-md-6 col-12">
-                        <div class="card" style="width: 18rem;">
-                            <img src="{{ asset('uploads/course/' . $course->image) }}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ $course->title }}</h5>
-                                <p class="card-text"></p>
-                                <a href="{{ url('/category/' . $category->slug . '/' . $course->slug) }}"
-                                    class="btn btn-primary">Browse</a>
-                            </div>
+                    <div class="card" style="width: 18rem; ">
+                        <img src="{{ asset('uploads/course/' . $fcat->image) }}" class="card-img-top" alt="...">
+                        <a href="#" class="btn-buy"></a>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $fcat->title }}</h5>
+                            <p class="card-text"></p>
+                            <a href="{{ url('/category/'.$fcat->category_id.'/'. $fcat->course_id ) }}" class="btn btn-primary">Buy Now</a>
+                             {{-- @php
+                            dd($category->courses()); 
+                            die;
+                            @endphp  --}}
                         </div>
                     </div>
-                @endforeach
-                <div class="d-flex justify-content-center">
-                    {{ $courses->links() }}
                 </div>
-            </div>
-        </div>
-    </section>
+            @endforeach
+         </div>
+     </div>
+  </div>
+</div>
+
+   
+
+    
 @endsection

@@ -19,10 +19,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 Route::get('/home', function () {
-    return view('home.home');
+    return view('welcome');
 });
 
 Route::get('/about', function () {
@@ -42,8 +40,13 @@ Route::get('/user', function () {
     return view('home.user');
 });
 
+Route::middleware(['auth'])->group(function () {
+
 Route::get('/category/{slug}', [App\Http\Controllers\Client\CategoryController::class,'index']);
 Route::get('/category/{category_slug}/{course_slug}', [App\Http\Controllers\Client\CourseController::class,'index']);
+    
+});
+
 
 Route::prefix('admin')->middleware(['auth','admin'])->group(function () {
     Route::get('/dasboard', [App\Http\Controllers\Admin\DasboardController::class,'index']);

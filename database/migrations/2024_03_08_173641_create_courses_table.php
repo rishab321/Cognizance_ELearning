@@ -13,17 +13,16 @@ return new class extends Migration
     {
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
-             $table->string('title');
-             $table->unsignedBigInteger('category_id');
-             $table->mediumText('description');
-             $table->text('long_description');
-             $table->string('slug');
-             $table->string('video')->nullable();
-             $table->string('meta_title')->nullable();
-             $table->string('image');
-             $table->string('meta_description')->nullable();
-             $table->string('price')->default('0');   
-
+            $table->unsignedBigInteger('category_id');
+            $table->string('title');
+            $table->mediumText('description');
+            $table->text('long_description');
+            $table->string('video')->nullable();
+            $table->string('slug');
+            $table->string('image')->nullable();
+            $table->string('meta_title')->nullable();
+            $table->string('meta_description')->nullable();
+            $table->string('price')->default('0');
             $table->timestamps();
         });
     }

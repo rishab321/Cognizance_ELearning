@@ -9,6 +9,11 @@ use App\models\Category;
 class Course extends Model
 {
     use HasFactory;
+    protected $table = 'courses';
+
+    protected $fillable = [ 
+        'course_id',
+     ]; 
     
 
     public function category()

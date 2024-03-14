@@ -8,15 +8,12 @@
             <h3>Presento<span>.</span></h3>
             <p>
               A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br><br>
               <strong>Phone:</strong> +1 5589 55488 55<br>
               <strong>Email:</strong> info@example.com<br>
             </p>
           </div>
 
           <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Useful Links</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
@@ -45,10 +42,7 @@
             </form>
           </div>
 
-        </div>
-      </div>
-    </div>
-
+   
     <div class="container d-md-flex py-4">
 
       <div class="me-md-auto text-center text-md-start">
@@ -71,4 +65,8 @@
         <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
       </div>
     </div>
+  </div>
+</div>
+</div>
+
   </footer>

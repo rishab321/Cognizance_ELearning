@@ -12,7 +12,7 @@ class CategoryController extends Controller
 {
     public function index($slug){
         $category = Category::where("slug", $slug)->first();
-        $courses = Course::where('category_id', $category->id)->paginate(1);
-        return view ('client.category.index', compact('category', 'courses'));
+        $courses = Course::where('category_id', $category->id)->paginate();
+        return view ('client.category.index', compact('category','courses'));
     }
 }
