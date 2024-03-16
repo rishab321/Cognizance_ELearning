@@ -27,7 +27,7 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ $fcat->title }}</h5>
                             <p class="card-text"></p>
-                            <a href="{{ url('/category/'.$fcat->category_id.'/'. $fcat->course_id ) }}" class="btn btn-primary">Buy Now</a>
+                            <a href="{{ url('/category/'.$fcat->category->slug.'/'. $fcat->slug ) }}" class="btn btn-primary">Buy Now</a>
                              {{-- @php
                             dd($category->courses()); 
                             die;
@@ -40,8 +40,5 @@
      </div>
   </div>
 </div>
-
-   
-
     
 @endsection

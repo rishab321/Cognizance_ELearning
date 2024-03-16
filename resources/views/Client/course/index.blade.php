@@ -3,26 +3,18 @@
 @section('title', $course->title . ' - ELearning')
 
 @section('content')
-    <section class="section-padding section-bg">
-        <div class="container">
+<div  class="container pt-5">
+    <div class="row py-5">
+        <div class="col-md-12">
             <h1>{{$course->title}}</h1>
-            <p><span class="badge bg-secondary">{{$category->title}}</span></p>
-            <div class="row">
-                <div class="col-md-12">
-                    <p>
-                        {{$course->description}}
-                    </p>
-                </div>
-                <div class="col-md-12">
-                    {!! $course->long_description !!}
-                </div>
-                <div class="col-md-12 mb-5">
-                    <h2 class="text-danger">₹ {{$course->price}}</h2>
-                </div>
-                <div class="col-md-12">
-                    <a href="{{url('')}}" class="btn btn-primary">Subscribe</a>
-                </div>
-            </div>
+            <img height="250" src="{{asset('uploads/course/'.$course->image)}}" alt="">
+            <p>{{$course->description}}</p>
+            <h3 class="text-danger">{{$course->price}}</h3>
+            <p>
+                <a href="{{url('/')}}" class="btn btn-warning">Subscribe</a>
+            </p>
         </div>
-    </section>
+     </div>
+ </div>
+</div>
 @endsection

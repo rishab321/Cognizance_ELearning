@@ -14,6 +14,8 @@ class CourseController extends Controller
     public function index($category_slug, $course_slug){
         $category = Category::where('slug', $category_slug)->first();
         $course = Course::where('slug', $course_slug)->first();
+        // dd($course);
+        // die;
         return view ('client.course.index', compact('category', 'course'));
     }
 }
